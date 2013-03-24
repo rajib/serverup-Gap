@@ -23,49 +23,92 @@
     <link rel="shortcut icon" href="../assets/ico/favicon.png">
     <style type="text/css">
         body {
-          padding-top: 0;
+          padding-top: 60px;
           padding-bottom: 40px;
+          padding-right: 4px;
+          padding-left: 4px;
           background-color: #f5f5f5;
         }
-        .navbar .brand { color: white; }
-        .navbar .nav > li > a { color: white; }
+        .navbar-fixed-top, .navbar-fixed-bottom {
+          position: fixed;
+        }
+        .thumbnail {
+          background-color: white;
+          display: block;
+          padding: 4px;
+          line-height: 20px;
+          border: 1px solid #ddd;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+          -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+        }
+        .thumbnails > li {
+          margin-bottom: 4px;
+        }
+        .timeago-text { font-size: 10px; }
     </style>
   </head>
   
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+        <div class="container" style="padding-left:30px;">
           <span class="brand">Serverup?</span>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="#" id="logout"><i class="icon-off icon-white"></i></a></li>
-              <!-- <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li> -->
-            </ul>
-          </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
     <div class="container">
-
-      <h1>Bootstrap starter template</h1>
-      <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+      <div id="listServers"></div>
+      <script id="listServersTemplate" type="text/x-handlebars-template">
+        <ul class="thumbnails">
+          {{#each this}}
+            <li class="span3">
+              <div class="thumbnail">
+                </span>
+                  <strong><a href={{url}}>{{name}}</a></strong>
+                  <span class="label {{status_class status}} pull-right">{{status}}</span>
+                </span>
+                <div style="padding-top: 7px;" class="timeago-text">
+                  checked <span class="timeago" title={{updated_at}}>{{updated_at}}</span>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </script>
 
     </div> <!-- /container -->
+
+    <div class="navbar navbar-fixed-bottom">
+      <div class="navbar-inner">
+        <div class="container" style="padding-left:30px;">
+        <ul class="nav">
+          <li><a href="#" id="refresh"><i class="icon-refresh"></i></a></li>
+          <li><a href="#" id="logout"><i class="icon-off"></i></a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+
     <!-- /container -->
     <!-- Le javascript==================================================- ->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery-1.9.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/handlebars.js"></script>
+    <script src="assets/js/jquery.timeago.js"></script>
     <script src="assets/js/servers.js"></script>
     <script src="assets/js/sessions.js"></script>
   </body>
 
 </html>
+
+
