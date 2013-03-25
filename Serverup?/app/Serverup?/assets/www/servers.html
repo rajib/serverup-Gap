@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <title>Serverup?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/application.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <style type="text/css">
+        body {
+          padding-top: 60px;
+          padding-bottom: 40px;
+          padding-right: 4px;
+          padding-left: 4px;
+          background-color: #f5f5f5;
+        }
+        .navbar-fixed-top, .navbar-fixed-bottom {
+          position: fixed;
+        }
+        .thumbnail {
+          background-color: white;
+          display: block;
+          padding: 4px;
+          line-height: 20px;
+          border: 1px solid #ddd;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+          -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+        }
+        .thumbnails > li {
+          margin-bottom: 4px;
+        }
+        .timeago-text { font-size: 10px; }
+    </style>
+  </head>
+  
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container" style="padding-left:30px;">
+          <span class="brand">Serverup?</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="listServers"></div>
+      <script id="listServersTemplate" type="text/x-handlebars-template">
+        <ul class="thumbnails">
+          {{#each this}}
+            <li class="span3">
+              <div class="thumbnail">
+                </span>
+                  <strong><a href={{url}}>{{name}}</a></strong>
+                  <span class="label {{status_class status}} pull-right">{{status}}</span>
+                </span>
+                <div style="padding-top: 7px;" class="timeago-text">
+                  checked <span class="timeago" title={{updated_at}}>{{updated_at}}</span>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </script>
+
+    </div> <!-- /container -->
+
+    <div class="navbar navbar-fixed-bottom">
+      <div class="navbar-inner">
+        <div class="container" style="padding-left:30px;">
+        <ul class="nav">
+          <li><a href="#" id="refresh"><i class="icon-refresh"></i></a></li>
+          <li><a href="#" id="logout"><i class="icon-off"></i></a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+
+    <!-- /container -->
+    <!-- Le javascript==================================================- ->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/handlebars.js"></script>
+    <script src="assets/js/jquery.timeago.js"></script>
+    <script src="assets/js/servers.js"></script>
+    <script src="assets/js/sessions.js"></script>
+  </body>
+
+</html>
+
+
