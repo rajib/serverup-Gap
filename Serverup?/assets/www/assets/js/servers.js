@@ -16,6 +16,7 @@ $(function () {
 	  	var template = Handlebars.compile(source);
 	  	$("#listServers").html(template(json));
 	  	$("span.timeago").timeago(); // apply fuzzy time
+	  	$("#listServersView").listview(); // apply mobile lisview
 	  }
 	});
 });
