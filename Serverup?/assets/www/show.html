@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Serverup?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+</head> 
+<body> 
+
+<div data-role="page">
+
+  <div data-role="header" data-position="fixed">
+    <h1>Serverup<span style="color:orange">?</span></h1>
+  </div><!-- /header -->
+
+  <div data-role="content"> 
+    <div id="listServers"></div>
+    <script id="showServerTemplate" type="text/x-handlebars-template">
+      <ul data-role="listview" id="showServerView" data-filter="true" data-filter-theme="b">
+          <li>
+          	Name: {{name}}             
+          </li>
+          <li>
+          	Url: {{url}}             
+          </li>  
+          <li>
+          	Status: {{status}}             
+          </li>                  
+      </ul>
+    </script> 
+  </div><!-- /content -->
+
+  <div data-role="footer" data-position="fixed">    
+    <div data-role="navbar" data-iconpos="top">
+      <ul>
+        <li><a href="#" id="refresh" data-icon="refresh">Refresh</a></li>
+        <li><a href="#" id="logout" data-icon="back">Sign out</a></li>
+      </ul>
+    </div><!-- /navbar -->
+  </div><!-- /footer -->
+
+</div><!-- /page -->
+  <script src="assets/js/handlebars.js"></script>
+  <script src="assets/js/jquery.timeago.js"></script>
+  <script src="assets/js/show.js"></script>
+  <script src="assets/js/sessions.js"></script>
+</body>
+</html>

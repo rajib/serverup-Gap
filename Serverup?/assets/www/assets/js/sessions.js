@@ -11,7 +11,7 @@ $('#signinForm').submit(function(e) {
 
 	$.ajax({
 	  type: "POST",
-	  url: 'http://dev7.indusnettechnologies.com:8888/api/v1/sessions.json',
+	  url: 'http://serverup.io/api/v1/sessions.json',
 	  data: { email: email, password: password },
 	  dataType: 'json',
 	  success: function (json) {  	
@@ -32,7 +32,7 @@ $('#signinForm').submit(function(e) {
 
 $('#logout').click(function(e) {
 	$.ajax({
-	  url: 'http://dev7.indusnettechnologies.com:8888/api/v1/sessions.json?auth_token='+localStorage.getItem("auth_token"),
+	  url: 'http://serverup.io/api/v1/sessions.json?auth_token='+localStorage.getItem("auth_token"),
 	  type: "DELETE",
 	  // data: { auth_token: localStorage.getItem("auth_token") },
 	  success: function (json) {
