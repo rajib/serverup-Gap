@@ -12,3 +12,8 @@ $(function () {
       }
     });
 });
+
+$('#back_btn_show').click(function(e) {
+    window.location.replace('servers.html');
+    e.preventDefault();
+});

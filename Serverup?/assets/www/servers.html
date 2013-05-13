@@ -27,37 +27,13 @@
       <ul data-role="listview" id="listServersView" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search">
         {{#each this}}
           <li>
-            <a class="my_server" data-transition="slide" href='#show'>{{name}}</a>
+            <a class="my_server" data-transition="slide" href='#'>{{name}}</a>
+            <input type="hidden" class="my_id" value="{{id}}">
             <span class="ui-li-count">{{status}}</span>            
           </li>
         {{/each}}
       </ul>
     </script> 
-  </div><!-- /content -->
-
-  <div data-role="footer" data-position="fixed">    
-    <div data-role="navbar" data-iconpos="top">
-      <ul>
-        <li><a href="#" id="refresh" data-icon="refresh">Refresh</a></li>
-        <li><a href="#" id="logout" data-icon="back">Sign out</a></li>
-      </ul>
-    </div><!-- /navbar -->
-  </div><!-- /footer -->
-
-</div><!-- /page -->
-
-
-<div data-role="page" id="show"> <!-- Show page -->
-
-  <div data-role="header" data-position="fixed">
-    <h1>Serverup<span style="color:orange">?</span></h1>
-  </div><!-- /header -->
-
-  <div data-role="content"> 
- <div style="position: absolute; top: 50%; left: 50%; margin-top: -50px; margin-left: -50px;">    
-    <a href="#servers" data-role="button" data-inline="true" data-transition="slide">Back To Home</a>  <br />   
-  Page Content Coming Soon
-</div>
   </div><!-- /content -->
 
   <div data-role="footer" data-position="fixed">    

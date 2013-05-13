@@ -26,18 +26,18 @@ $('#refresh').click(function(e) {
     e.preventDefault();
 });
 
-// $('.my_server').live('click',function(e){
-//     var id = $('.my_id').val();
-//     $.ajax({
-//         url: 'http://serverup.io/api/v1/servers/'+id,
-//         data: { auth_token: localStorage.getItem("auth_token") },
-//         success: function (json) {
-//         window.location.replace('show.html'); 
-//         }, 
-//         error: function (json) {
-//             var obj = jQuery.parseJSON(json.responseText);
-//             alert(obj.message)
-//         }          
-//     });
-//     e.preventDefault();
-// });
+$('.my_server').live('click',function(e){
+    var id = $('.my_id').val();
+    $.ajax({
+        url: 'http://serverup.io/api/v1/servers/'+id,
+        data: { auth_token: localStorage.getItem("auth_token") },
+        success: function (json) {
+        window.location.replace('show.html'); 
+        }, 
+        error: function (json) {
+            var obj = jQuery.parseJSON(json.responseText);
+            alert(obj.message)
+        }          
+    });
+    e.preventDefault();
+});
