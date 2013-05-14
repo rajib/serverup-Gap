@@ -21,23 +21,8 @@ $(function () {
     });
 });
 
-$('#refresh').click(function(e) {
-    window.location.replace('servers.html');
-    e.preventDefault();
-});
-
-$('.my_server').live('click',function(e){
-    var id = $('.my_id').val();
-    $.ajax({
-        url: 'http://serverup.io/api/v1/servers/'+id,
-        data: { auth_token: localStorage.getItem("auth_token") },
-        success: function (json) {
-        window.location.replace('show.html'); 
-        }, 
-        error: function (json) {
-            var obj = jQuery.parseJSON(json.responseText);
-            alert(obj.message)
-        }          
-    });
+$( document ).on('click', function( e ){
+    var identifier = $( e.target ).closest('.my_server').attr('data-identifier');
+    window.location.replace('show.html?id='+identifier);
     e.preventDefault();
 });

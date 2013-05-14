@@ -16,13 +16,12 @@
   </div><!-- /header -->
 
   <div data-role="content"> 
-     <div style="position: absolute; top: 50%; left: 50%; margin-top: -50px; margin-left: -50px;">    
-      <a href="#" id="back_btn_show" data-role="button" data-inline="true" data-transition="slide">Back To Home</a>  <br />   
-      Page Content Coming Soon
+     <div style="position: absolute; top: 50%; left: 46%; margin-top: -50px; margin-left: -50px;">    
+      <!-- <a href="" id="back_btn_show">Back To Home</a>  <br />   -->
     </div>
     <div id="listServers"></div>
     <script id="showServerTemplate" type="text/x-handlebars-template">
-      <ul data-role="listview" id="showServerView" data-filter="true" data-filter-theme="b">
+      <ul data-role="listview" id="showServerView" data-filter-theme="b">
           <li>
           	Name: {{name}}             
           </li>
@@ -39,6 +38,7 @@
   <div data-role="footer" data-position="fixed">    
     <div data-role="navbar" data-iconpos="top">
       <ul>
+        <li><a href="#" id="home" data-icon="home">Home</a></li>
         <li><a href="#" id="refresh" data-icon="refresh">Refresh</a></li>
         <li><a href="#" id="logout" data-icon="back">Sign out</a></li>
       </ul>
@@ -48,7 +48,7 @@
 </div><!-- /page -->
   <script src="assets/js/handlebars.js"></script>
   <script src="assets/js/jquery.timeago.js"></script>
-  <script src="assets/js/show.js"></script>
-  <script src="assets/js/sessions.js"></script>
+  <script src="assets/js/server/show.js"></script>
+  <script src="assets/js/common.js"></script>
 </body>
 </html>

@@ -27,8 +27,7 @@
       <ul data-role="listview" id="listServersView" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search">
         {{#each this}}
           <li>
-            <a class="my_server" data-transition="slide" href='#'>{{name}}</a>
-            <input type="hidden" class="my_id" value="{{id}}">
+            <a class="my_server" data-identifier={{id}} data-transition="slide" href='#'>{{name}}</a>
             <span class="ui-li-count">{{status}}</span>            
           </li>
         {{/each}}
@@ -39,6 +38,7 @@
   <div data-role="footer" data-position="fixed">    
     <div data-role="navbar" data-iconpos="top">
       <ul>
+        <li><a href="#" id="home" data-icon="home">Home</a></li>
         <li><a href="#" id="refresh" data-icon="refresh">Refresh</a></li>
         <li><a href="#" id="logout" data-icon="back">Sign out</a></li>
       </ul>
@@ -49,7 +49,7 @@
 
   <script src="assets/js/handlebars.js"></script>
   <script src="assets/js/jquery.timeago.js"></script>
-  <script src="assets/js/servers.js"></script>
-  <script src="assets/js/sessions.js"></script>
+  <script src="assets/js/server/index.js"></script>
+  <script src="assets/js/common.js"></script>
 </body>
 </html>
