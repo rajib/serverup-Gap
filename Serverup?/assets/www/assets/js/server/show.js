@@ -33,7 +33,7 @@ $(function () {
     });
 });
 
-$('#home').click(function(e) {
-    window.location.replace('servers.html');
+ $('#refresh').live('click',function(e) {
+    window.location.replace('show.html?id='+$.getUrlVar('id'));
     e.preventDefault();
 });

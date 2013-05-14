@@ -6,7 +6,7 @@ $(function () {
             return 'label-important'
        };
     });
-
+   
     $.ajax({
       url: 'http://serverup.io/api/v1/servers.json',
       data: { auth_token: localStorage.getItem("auth_token") },
@@ -21,8 +21,19 @@ $(function () {
     });
 });
 
-$( document ).on('click', function( e ){
-    var identifier = $( e.target ).closest('.my_server').attr('data-identifier');
-    window.location.replace('show.html?id='+identifier);
+ $('#listServersView').live('click', function( e ){
+     var identifier = $( e.target ).closest('.my_server').attr('data-identifier');
+     window.location.replace('show.html?id='+identifier);
+     e.preventDefault();
+ });
+
+ $('#refresh').click(function(e) {
+    window.location.replace('servers.html');
     e.preventDefault();
 });
+
+// $('#listServers').on('click', function( e ){
+//     var identifier = $( e.target ).closest('.my_server').attr('data-identifier');
+//     window.location.replace('show.html?id='+identifier);
+//     e.preventDefault();
+// });

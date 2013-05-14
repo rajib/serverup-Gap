@@ -33,3 +33,13 @@ $(function () {
     });
 });
 
+ $('#refresh').live('click',function(e) {
+    alert("");
+    window.location.replace('show.html');
+    e.preventDefault();
+});
+
+
+
+
+
