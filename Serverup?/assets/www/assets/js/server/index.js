@@ -17,7 +17,7 @@ $(function () {
    
     $.ajax({
       url: 'http://serverup.io/api/v1/servers.json',
-      data: { auth_token: localStorage.getItem("auth_token") },
+      data: { auth_token: localStorage.getItem("srvrup_auth_token") },
       success: function (json) {
         console.log(json)
         var source = $("#listServersTemplate").html();
