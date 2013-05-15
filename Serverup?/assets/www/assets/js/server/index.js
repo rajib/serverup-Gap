@@ -6,6 +6,14 @@ $(function () {
             return 'label-important'
        };
     });
+
+    Handlebars.registerHelper("server_status_span", function(status){
+       if (status == 'up') {
+            return "color:#637333"
+       } else {
+            return "color:#B42A00"
+       };
+    });    
    
     $.ajax({
       url: 'http://serverup.io/api/v1/servers.json',

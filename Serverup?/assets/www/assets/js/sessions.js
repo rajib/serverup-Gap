@@ -1,3 +1,18 @@
+// $( document ).bind( "pagebeforeload", function( e, data ){
+// 	if(localStorage.getItem("auth_token") != ''){
+// 		console.log(localStorage.getItem("auth_token"));
+// 		window.location.replace('servers.html');	
+// 	}	
+// 	e.preventDefault();	
+// });
+
+$(document).bind('pageinit',function(e){
+	if(!(!localStorage.getItem("auth_token"))){
+		window.location.replace('servers.html');		
+	}
+	e.preventDefault();
+})
+
 $('#signinForm').submit(function(e) {
 	var email = $('#email').val();
 	var password = $('#password').val();

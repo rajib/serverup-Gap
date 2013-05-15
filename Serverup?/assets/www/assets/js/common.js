@@ -20,6 +20,8 @@ $('#logout').click(function(e) {
 	  url: 'http://serverup.io/api/v1/sessions.json?auth_token='+localStorage.getItem("auth_token"),
 	  type: "DELETE",
 	  success: function (json) {
+	  	localStorage.removeItem("auth_token");
+	  	console.log(localStorage.getItem("auth_token"));
 	  	window.location.replace('index.html');
 	  }
 	});

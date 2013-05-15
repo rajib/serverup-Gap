@@ -12,7 +12,17 @@
         top: 56px;
         width: 100%;
         z-index  : 2;
-    }​    
+    }​  
+
+/*    #up_server {
+      background-color: #8AC007;
+      color: #8AC007;
+    }  */
+/*    #down_server {
+      background-color: #B42A00;
+      color: #B42A00;
+    }  */   
+
   </style>
 </head> 
 <body> 
@@ -30,7 +40,7 @@
         {{#each this}}
           <li>
             <a class="my_server" data-identifier={{id}} data-transition="slide" href='#'>{{name}}</a>
-            <span class="ui-li-count">{{status}}</span>            
+            <span class="ui-li-count" id="up_server" style={{server_status_span this.status }}>{{status}}</span>            
           </li>
         {{/each}}
       </ul>
