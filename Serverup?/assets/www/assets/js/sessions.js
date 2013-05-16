@@ -1,17 +1,15 @@
-// $( document ).bind( "pagebeforeload", function( e, data ){
-// 	if(localStorage.getItem("auth_token") != ''){
-// 		console.log(localStorage.getItem("auth_token"));
-// 		window.location.replace('servers.html');	
-// 	}	
-// 	e.preventDefault();	
-// });
-
-$(document).bind('pageinit',function(e){
-	if(!(!localStorage.getItem("srvrup_auth_token"))){
-		window.location.replace('servers.html');		
-	}
-	e.preventDefault();
-})
+$().ready(function(){
+	$.ajaxSetup({
+		beforeSend: function() { $.mobile.loading('show', {
+        	text: 'Loading...',
+        	textVisible: true,
+        	theme: 'a',
+        	html: ""
+		});
+		},
+		complete: function(jqXHR, textStatus) { $.mobile.loading('hide'); }
+	});
+});
 
 $('#signinForm').submit(function(e) {
 	var email = $('#email').val();

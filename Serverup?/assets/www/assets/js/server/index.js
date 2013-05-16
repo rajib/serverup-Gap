@@ -1,3 +1,10 @@
+$(document).bind('pageinit',function(e){
+  if(!localStorage.getItem("srvrup_auth_token")){
+    window.location.replace('index.html');    
+  }
+  e.preventDefault();
+})
+
 $(function () {
     Handlebars.registerHelper("status_class", function(status){
        if (status == 'up') {
@@ -9,7 +16,7 @@ $(function () {
 
     Handlebars.registerHelper("server_status_span", function(status){
        if (status == 'up') {
-            return "color:#637333"
+            return "color:#5D7924"
        } else {
             return "color:#B42A00"
        };

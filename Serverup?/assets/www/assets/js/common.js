@@ -1,6 +1,12 @@
 $().ready(function(){
 	$.ajaxSetup({
-		beforeSend: function() { $.mobile.loading('show') },
+		beforeSend: function() { $.mobile.loading('show', {
+        	text: 'Loading...',
+        	textVisible: true,
+        	theme: 'a',
+        	html: ""
+		});
+		},
 		complete: function(jqXHR, textStatus) { $.mobile.loading('hide'); }
 	});
 });
