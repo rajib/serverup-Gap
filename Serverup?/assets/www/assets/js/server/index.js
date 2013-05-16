@@ -16,7 +16,7 @@ $(function () {
 
     Handlebars.registerHelper("server_status_span", function(status){
        if (status == 'up') {
-            return "color:#5D7924"
+            return "color:#89c647"
        } else {
             return "color:#B42A00"
        };
