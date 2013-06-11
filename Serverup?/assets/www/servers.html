@@ -12,7 +12,7 @@
         top: 58px;
         width: 100%;
         z-index  : 2;
-    }​  
+    }​
   </style>
 </head> 
 <body> 
@@ -28,7 +28,7 @@
   <div data-role="content"> 
     <div id="listServers"></div>
     <script id="listServersTemplate" type="text/x-handlebars-template">
-      <ul data-role="listview" id="listServersView" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search">
+      <ul data-role="listview" id="listServersView" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search" style="padding-top:42px;">
         {{#each this}}
           <li>
             <a class="my_server" data-identifier={{id}} data-transition="slide" href='#'>{{name}}</a>
